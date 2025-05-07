@@ -36,7 +36,15 @@ public class Train {
         return remaining;
     }
 
-    public void printManifest(){
-        ArrayList<Passenger> passengers = new ArrayList<>();
+    public void printManifest() {
+        System.out.println("----- Train Manifest -----");
+        if (myCars.length == 0) {
+            System.out.println("This train has no cars.");
+            return;
+        }
+        for (int i = 0; i < myCars.length; i++) {
+            System.out.println("\n--- Car " + (i + 1) + " ---");
+            myCars[i].printManifest();
+        }
     }
 }
